@@ -1,0 +1,18 @@
+.button{
+    background-color: var(--secondary-color);
+    border-radius: 4px;
+    padding: 11px 16px;
+    display: inline-flex;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    outline: none;
+    border: none;
+    --btn-pressing-color: #FFD84D;
+}
+
+.button:active {
+    background-color: var(--btn-pressing-color);
+}
+

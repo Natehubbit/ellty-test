@@ -1,24 +1,18 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import Menu from './components/Menu';
+
+const OPTIONS = [
+  { id: '1', label: 'Page 1', checked: false },
+  { id: '2', label: 'Page 2', checked: false },
+  { id: '3', label: 'Page 3', checked: false },
+  { id: '4', label: 'Page 4', checked: false },
+];
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="app">
+      <div className="content">
+        <Menu list={OPTIONS} />
+      </div>
     </div>
   );
 }
