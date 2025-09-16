@@ -20,9 +20,9 @@ const MenuHeader = ({ checkedAll, onSelectAll }: MenuHeaderProps) => {
   }, [checkedAll]);
 
   return (
-    <div className={styles.header} onClick={() => callback(!checkAll)}>
+    <div className={styles.header}>
       <div className={styles['list-header-content']}>
-        <div className={styles['list-header-info']}>
+        <div className={styles['list-header-info']} onClick={() => callback(!checkAll)}>
           <p>All Pages</p>
           <Checkbox checked={checkAll} onCheck={callback} />
         </div>

@@ -3,6 +3,7 @@ import Button from '../shared/Button';
 import List from '../shared/List';
 import { ListItemProps } from '../shared/List/item';
 import MenuHeader from './Header';
+import styles from './style.module.css';
 
 interface MenuProps {
   list: ListItemProps[];
@@ -37,18 +38,24 @@ const Menu: FC<MenuProps> = ({ list }) => {
   };
 
   const renderFooter = () => {
-    return <Button label="Done" onClick={onDone} />;
+    return (
+      <div className={styles['list-footer-content']}>
+        <Button label="Done" onClick={onDone} />
+      </div>
+    );
   };
 
   const checkedAll = options.every((item) => item.checked);
 
   return (
-    <List
-      items={options}
-      onChange={onSelect}
-      footer={renderFooter()}
-      header={<MenuHeader checkedAll={checkedAll} onSelectAll={onSelectAll} />}
-    />
+    <div className={styles.menu}>
+      <List
+        items={options}
+        onChange={onSelect}
+        footer={renderFooter()}
+        header={<MenuHeader checkedAll={checkedAll} onSelectAll={onSelectAll} />}
+      />
+    </div>
   );
 };
 

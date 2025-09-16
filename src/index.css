@@ -1,5 +1,5 @@
 :root {
-  --border-color: #bdbdbd;
+  --border-color: #cdcdcd;
   --text-color: #000;
   --primary-color: #fff;
   --secondary-color: #ffce22;
@@ -20,7 +20,7 @@ body {
 .app {
   height: 100dvh;
   width: 100dvw;
-  padding-top: 100px;
+  padding-top: 85px;
   justify-content: center;
   align-items: center;
   flex-direction: column;
