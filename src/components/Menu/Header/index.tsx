@@ -9,10 +9,19 @@ interface MenuHeaderProps {
 
 const MenuHeader = ({ checkedAll, onSelectAll }: MenuHeaderProps) => {
   const [checkAll, setCheckAll] = useState(checkedAll);
+  const [hovered, setHovered] = useState(false);
 
   const callback = (checked: boolean) => {
     setCheckAll(checked);
     onSelectAll(checked);
+  };
+
+  const onHover = () => {
+    setHovered(true);
+  };
+
+  const onLeave = () => {
+    setHovered(false);
   };
 
   useEffect(() => {
@@ -22,9 +31,14 @@ const MenuHeader = ({ checkedAll, onSelectAll }: MenuHeaderProps) => {
   return (
     <div className={styles.header}>
       <div className={styles['list-header-content']}>
-        <div className={styles['list-header-info']} onClick={() => callback(!checkAll)}>
+        <div
+          className={styles['list-header-info']}
+          onMouseEnter={onHover}
+          onMouseLeave={onLeave}
+          onClick={() => callback(!checkAll)}
+        >
           <p>All Pages</p>
-          <Checkbox checked={checkAll} onCheck={callback} />
+          <Checkbox hovered={hovered} checked={checkAll} onCheck={callback} />
         </div>
       </div>
     </div>
